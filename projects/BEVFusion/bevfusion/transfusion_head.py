@@ -235,17 +235,17 @@ class TransFusionHead(nn.Module):
         local_max[:, :, padding:(-padding),
                   padding:(-padding)] = local_max_inner
         # for Pedestrian & Traffic_cone in nuScenes
-        if self.test_cfg['dataset'] == 'nuScenes':
-            local_max[:, 8, ] = F.max_pool2d(
-                heatmap[:, 8], kernel_size=1, stride=1, padding=0)
-            local_max[:, 9, ] = F.max_pool2d(
-                heatmap[:, 9], kernel_size=1, stride=1, padding=0)
-        elif self.test_cfg[
-                'dataset'] == 'Waymo':  # for Pedestrian & Cyclist in Waymo
-            local_max[:, 1, ] = F.max_pool2d(
-                heatmap[:, 1], kernel_size=1, stride=1, padding=0)
-            local_max[:, 2, ] = F.max_pool2d(
-                heatmap[:, 2], kernel_size=1, stride=1, padding=0)
+        # if self.test_cfg['dataset'] == 'nuScenes':
+        #     local_max[:, 8, ] = F.max_pool2d(
+        #         heatmap[:, 8], kernel_size=1, stride=1, padding=0)
+        #     local_max[:, 9, ] = F.max_pool2d(
+        #         heatmap[:, 9], kernel_size=1, stride=1, padding=0)
+        # elif self.test_cfg[
+        #         'dataset'] == 'Waymo':  # for Pedestrian & Cyclist in Waymo
+        #     local_max[:, 1, ] = F.max_pool2d(
+        #         heatmap[:, 1], kernel_size=1, stride=1, padding=0)
+        #     local_max[:, 2, ] = F.max_pool2d(
+        #         heatmap[:, 2], kernel_size=1, stride=1, padding=0)
         heatmap = heatmap * (heatmap == local_max)
         heatmap = heatmap.view(batch_size, heatmap.shape[1], -1)
 
