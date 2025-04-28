@@ -1,5 +1,9 @@
 This repo show how to train BEVFusion on custom dataset. Include: creating a custom dataset, training and evaluating on custom dataset metrics.
 # Getting Started
+```
+git clone https://github.com/Zhao-Qihao/mmdetection3d.git
+git checkout customdata
+```
 ## Installation
 Refer to [installation](https://mmdetection3d.readthedocs.io/zh-cn/latest/get_started.html) to prepare the environment.
 ## Dataset Preparation
