@@ -103,7 +103,7 @@ def _fill_trainval_infos(root_path):
             # 初始化子字典
             info['images']["CAM_"+cam_name] = dict()
 
-            # info['images']["CAM_"+cam_name]['img_path'] = root_path + '/image_' + cam_name + '/' + cam_path
+            # info['images']["CAM_"+cam_name]['img_path'] = root_path + '/images    /image_' + cam_name + '/' + cam_path
             info['images']["CAM_"+cam_name]['img_path'] = cam_path
             info['images']["CAM_"+cam_name]['height'] = 1080
             info['images']["CAM_"+cam_name]['width'] = 1920

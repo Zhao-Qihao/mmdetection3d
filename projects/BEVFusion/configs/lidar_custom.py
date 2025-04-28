@@ -21,11 +21,11 @@ metainfo = dict(classes=class_names)
 dataset_type = 'CustomDataset'
 data_root = 'data/custom/'
 data_prefix = dict(pts='points', 
-                   CAM_0='image_0',
-                   CAM_1='image_1', 
-                   CAM_2='image_2',
-                   CAM_3='image_3',
-                   CAM_4='image_4',
+                   CAM_0='images/image_0',
+                   CAM_1='images/image_1', 
+                   CAM_2='images/image_2',
+                   CAM_3='images/image_3',
+                   CAM_4='images/image_4',
                    sweeps='')
 input_modality = dict(use_lidar=True, use_camera=False)
 # backend_args = dict(
